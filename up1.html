@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fréquence Divine</title>
+  <meta name="theme-color" content="#0f172a" />
+  <style>
+    :root{
+      --bg:#f3f6fb;
+      --ink:#0f172a;
+      --muted:#5b6473;
+      --card:#ffffff;
+      --line:#e7ebf3;
+      --blue:#3a63ff;
+      --blue2:#6f59ff;
+      --green:#16a34a;
+      --green2:#22c55e;
+      --orange:#ff6d1a;
+      --orange2:#ff9a3d;
+      --soft:#f8faff;
+      --shadow:0 22px 65px rgba(15,23,42,.10);
+      --shadow-sm:0 12px 30px rgba(15,23,42,.08);
+      --radius:26px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top, rgba(111,89,255,.12), transparent 26%),
+        radial-gradient(circle at 100% 0, rgba(34,197,94,.09), transparent 18%),
+        linear-gradient(180deg,#f7f9fd 0%,#f2f5fa 100%);
+      line-height:1.55;
+    }
+
+    .page{
+      width:min(100% - 28px, 820px);
+      margin:0 auto;
+      padding:22px 0 72px;
+    }
+
+    .top-wrap{
+      margin-bottom:22px;
+    }
+
+    .order-status{
+      background:linear-gradient(135deg,#0f172a 0%, #1e293b 100%);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:20px;
+      box-shadow:0 20px 50px rgba(15,23,42,.20);
+      padding:16px 18px;
+      text-align:center;
+    }
+
+    .status-title{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:14px;
+      line-height:1.2;
+      font-weight:900;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+
+    .status-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:#22c55e;
+      box-shadow:0 0 0 0 rgba(34,197,94,.55);
+      animation:pulse 1.5s infinite;
+      flex:0 0 auto;
+    }
+
+    .status-text{
+      margin-top:6px;
+      color:#dbe5f3;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    @keyframes pulse{
+      0%{box-shadow:0 0 0 0 rgba(34,197,94,.55)}
+      70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}
+      100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
+    }
+
+    .selected{
+      margin-top:16px;
+      background:linear-gradient(135deg,#179444 0%,#1db954 100%);
+      color:#fff;
+      border-radius:18px;
+      padding:16px 18px;
+      text-align:center;
+      box-shadow:0 18px 40px rgba(29,185,84,.24);
+      border:1px solid rgba(255,255,255,.22);
+    }
+
+    .selected strong{
+      display:block;
+      font-size:18px;
+      line-height:1.15;
+      margin-bottom:4px;
+    }
+
+    .selected span{
+      display:block;
+      font-size:14px;
+      font-weight:700;
+    }
+
+    .hero-card,
+    .section-card{
+      background:rgba(255,255,255,.84);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(231,235,243,.95);
+      border-radius:32px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card{
+      padding:28px 24px 22px;
+      text-align:center;
+    }
+
+    .hero h1,
+    .section h2,
+    p{margin-top:0}
+
+    .hero h1{
+      font-size:clamp(28px,4.6vw,44px);
+      line-height:1.02;
+      letter-spacing:-.04em;
+      margin-bottom:18px;
+      font-weight:950;
+      color:#121826;
+    }
+
+    .hero p,
+    .section p{
+      margin-bottom:8px;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    .intro-copy{
+      max-width:660px;
+      margin:0 auto 16px;
+      color:#364152 !important;
+      font-size:19px !important;
+      line-height:1.5;
+    }
+
+    .warning-card{
+      max-width:660px;
+      margin:24px auto 28px;
+      padding:20px 24px;
+      border:1px solid #f5d5a7;
+      border-radius:20px;
+      background:#fff8ee;
+      box-shadow:0 12px 28px rgba(170,92,17,.08);
+      color:#51351b;
+      font-size:18px;
+      line-height:1.5;
+      text-align:left;
+    }
+
+    .warning-card strong{
+      display:block;
+      margin-bottom:6px;
+      color:#9a4e0b;
+      font-size:20px;
+    }
+
+    .mockup-wrap{
+      display:flex;
+      justify-content:center;
+      margin:0 auto 18px;
+    }
+
+    .mockup-img{
+      width:min(100%, 500px);
+      max-width:500px;
+      height:auto;
+      display:block;
+      filter:drop-shadow(0 18px 36px rgba(58,99,255,.12));
+    }
+
+    .product-title{
+      margin:8px 0 10px;
+      font-size:clamp(34px,5vw,48px);
+      line-height:1.03;
+      letter-spacing:-.035em;
+      font-weight:950;
+      background:linear-gradient(90deg,var(--blue),var(--blue2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+
+    .lead-audio{
+      color:#364152 !important;
+      font-weight:750;
+      margin-bottom:14px !important;
+    }
+
+    .copy{
+      max-width:660px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .benefits-card,
+    .mini-card,
+    .offer-card{
+      width:min(100%, 680px);
+      margin-left:auto;
+      margin-right:auto;
+      border-radius:28px;
+      background:#fff;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow-sm);
+    }
+
+    .benefits-card,
+    .mini-card{
+      padding:24px 26px;
+      text-align:left;
+      margin-top:24px;
+    }
+
+    .benefits-card h3{
+      margin:0 0 14px;
+      color:#172238;
+      font-size:22px;
+      line-height:1.2;
+      font-weight:900;
+      text-align:center;
+    }
+
+    .benefits-card ul,
+    .receive-list,
+    .mini-card ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+    }
+
+    .benefits-card li,
+    .receive-list li,
+    .mini-card li{
+      padding:6px 0;
+      font-size:18px;
+      color:#26303f;
+    }
+
+    .section{
+      margin-top:28px;
+      text-align:center;
+    }
+
+    .section-card{
+      padding:28px 22px 26px;
+    }
+
+    .section h2{
+      font-size:clamp(30px,5vw,44px);
+      line-height:1.06;
+      letter-spacing:-.035em;
+      margin:0 auto 18px;
+      font-weight:950;
+      max-width:720px;
+    }
+
+    .offer-card{
+      position:relative;
+      overflow:hidden;
+      padding:28px 24px 24px;
+      background:linear-gradient(180deg,#ffffff 0%,#fbfcff 100%);
+      margin-top:12px;
+    }
+
+    .offer-card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:7px;
+      background:linear-gradient(90deg,var(--blue),var(--blue2),#87a5ff);
+    }
+
+    .offer-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background:#eef3ff;
+      border:1px solid #dfe7ff;
+      color:#304ccf;
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      margin-bottom:16px;
+    }
+
+    .offer-stack{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:16px;
+    }
+
+    .old-price{
+      font-size:24px;
+      font-weight:900;
+      color:#8b95a7;
+      text-decoration:line-through;
+      margin-bottom:6px;
+      letter-spacing:-.03em;
+    }
+
+    .offer-subline{
+      font-size:16px;
+      font-weight:800;
+      color:#4c5565;
+      margin-bottom:10px;
+    }
+
+    .price-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:7px;
+    }
+
+    .price{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 22px 14px;
+      border-radius:22px;
+      background:linear-gradient(180deg,#f4f7ff 0%,#eef2ff 100%);
+      border:1px solid #dce4ff;
+      color:#101827;
+      font-size:74px;
+      line-height:1;
+      font-weight:950;
+      letter-spacing:-.05em;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+    }
+
+    .payment-note{
+      margin:5px 0 0;
+      color:#586273;
+      font-size:15px;
+      font-weight:750;
+      text-align:center;
+    }
+
+    .funnel-wrap{
+      width:min(100%,560px);
+      margin:14px auto 0;
+      padding:0;
+      border:0;
+      background:transparent;
+      overflow:visible;
+    }
+
+    .funnel-wrap iframe{
+      display:block;
+      width:100%;
+      min-height:90px;
+      border:0;
+      background:transparent;
+    }
+
+    .urgency{
+      margin:18px auto 8px;
+      text-align:center;
+      color:#465162;
+      font-size:17px;
+      font-weight:700;
+    }
+
+    .last-chance{
+      text-align:center;
+      color:var(--orange);
+      font-size:18px;
+      font-weight:950;
+      max-width:660px;
+      margin:0 auto 2px;
+    }
+
+    .divider{
+      height:1px;
+      width:min(100%,680px);
+      margin:28px auto;
+      background:linear-gradient(90deg,transparent,#d8deea,transparent);
+    }
+
+    .receive-list{
+      width:min(100%,560px);
+      margin:0 auto;
+      text-align:center;
+    }
+
+    .closing{
+      margin-top:16px !important;
+      color:#4c5666 !important;
+      font-weight:650;
+    }
+
+    .bottom-offer{
+      margin-top:30px;
+    }
+
+
+    .anchor-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:min(100%, 560px);
+      min-height:58px;
+      margin:22px auto 4px;
+      padding:16px 22px;
+      border-radius:16px;
+      background:linear-gradient(135deg,#16a34a 0%,#22c55e 100%);
+      color:#fff;
+      text-decoration:none;
+      font-size:17px;
+      line-height:1.2;
+      font-weight:950;
+      letter-spacing:-.01em;
+      box-shadow:0 16px 34px rgba(34,197,94,.28);
+      transition:transform .18s ease, box-shadow .18s ease, filter .18s ease;
+    }
+
+    .anchor-cta:hover{
+      transform:translateY(-2px);
+      box-shadow:0 20px 40px rgba(34,197,94,.34);
+      filter:brightness(1.02);
+    }
+
+    .anchor-cta:active{
+      transform:translateY(0);
+    }
+
+    @media (max-width: 560px){
+      .page{width:min(100% - 20px, 820px);padding:16px 0 52px}
+      .order-status{padding:14px 12px;border-radius:16px}
+      .status-title{font-size:12px}
+      .status-text{font-size:11.5px}
+      .selected{padding:14px 12px;border-radius:14px}
+      .selected strong{font-size:16px}
+      .selected span{font-size:13px}
+      .hero-card,.section-card{border-radius:22px}
+      .hero-card{padding:24px 14px 18px}
+      .section-card{padding:24px 14px 22px}
+      .hero h1{font-size:30px}
+      .hero p,.section p{font-size:16px}
+      .intro-copy{font-size:17px !important}
+      .warning-card{padding:18px 16px;font-size:16px;margin:20px auto 24px}
+      .warning-card strong{font-size:18px}
+      .mockup-wrap{margin-bottom:14px}
+      .product-title{font-size:34px}
+      .benefits-card,.mini-card{padding:20px 16px;border-radius:18px}
+      .benefits-card h3{font-size:19px}
+      .benefits-card li,.receive-list li,.mini-card li{font-size:16px}
+      .section h2{font-size:32px}
+      .offer-card{padding:24px 14px 20px;border-radius:20px}
+      .offer-badge{font-size:11.5px;padding:7px 12px}
+      .old-price{font-size:22px}
+      .offer-subline{font-size:15px}
+      .price{padding:10px 16px 12px;border-radius:18px;font-size:58px}
+      .payment-note{font-size:13px}
+      .script-slot{min-height:82px;font-size:13px}
+      .urgency{font-size:15px}
+      .last-chance{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="top-wrap">
+      <div class="order-status">
+        <div class="status-title"><span class="status-dot"></span> Votre don est en cours de finalisation</div>
+        <div class="status-text">N’actualisez pas et ne fermez pas cette page. Cela pourrait provoquer une erreur lors du traitement de votre don.</div>
+      </div>
+
+      <div class="selected">
+        <strong>🎉 Félicitations !</strong>
+        <span>Vous avez été sélectionné pour accéder à cette activation...</span>
+      </div>
+    </div>
+
+    <section class="hero hero-card">
+      <h1>⚠️ Cette offre ne s’affiche<br>pas deux fois...<br>et elle n’est pas destinée à tout le monde.</h1>
+      <p class="intro-copy">Vous avez maintenant l’occasion d’activer le pouvoir de la <strong>Fréquence Divine</strong>, cette même fréquence qui résonne dans les royaumes célestes.</p>
+      <p class="intro-copy">Selon les Écritures, lorsqu’elle est diffusée, les portes de votre vie s’ouvrent uniquement à ce qui est bon et pur. Aucun esprit malveillant ne pourra entrer dans votre vie ni dans celle de votre famille.</p>
+
+      <div class="warning-card"><strong>⚠️ Mais soyez attentif.</strong>Cette fréquence est puissante et peut révéler le véritable visage des personnes qui avaient l’habitude de venir chez vous.</div>
+
+      <div class="mockup-wrap">
+        <img class="mockup-img" src="images/mockup.web" alt="Mockup Fréquence Divine" width="500" height="500" onerror="this.onerror=null;this.src='images/mockup.webp';" />
+      </div>
+
+      <div class="product-title">Fréquence Divine</div>
+      <p class="lead-audio">🎧 Ce n’est pas un simple enregistrement audio.</p>
+      <p class="copy">C’est une fréquence découverte il y a des siècles, utilisée par des moines et des guides spirituels pour la protection, la prospérité et la réussite.</p>
+      <p class="copy">La plupart des gens n’y auront jamais accès.</p>
+
+      <div class="benefits-card">
+        <h3>Voici tout ce que vous allez recevoir :</h3>
+        <ul>
+          <li>🎧 Audio de la Fréquence Céleste</li>
+          <li>📜 Manuscrit Sacré de Saint Michel Archange</li>
+          <li>🙏 Guide de la Prière Suprême de Saint Michel Archange</li>
+          <li>✨ Manuscrit des 4 Codes des Miracles</li>
+          <li>🛡️ Prière des 12 Paroles de Saint Benoît</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-card">
+        <h2>Souhaitez-vous activer dès maintenant la<br>Fréquence Divine ?</h2>
+
+        <div class="offer-card" id="oferta-principal">
+          <div class="offer-badge">Offre spéciale réservée à cette page</div>
+          <div class="offer-stack">
+            <div class="old-price">AU LIEU DE 147 €</div>
+            <div class="offer-subline">Uniquement sur cette page, maintenant</div>
+            <div class="price-wrap">
+              <div class="price" aria-label="37 euros">37 €</div>
+              <p class="payment-note">Paiement unique • Garantie 60 jours</p>
+            </div>
+          </div>
+
+          <div class="funnel-wrap">
+            <iframe
+              width="100%" height="100%"
+              id="product-funnel-cmuerlqe402ac01ohhs4gsbqb"
+              src="https://pay.digitalgoat.com.br/ext/funnel/cmuerlqe402ac01ohhs4gsbqb"
+              frameborder="0" allowtransparency="true">
+            </iframe>
+            <script src="https://app.digitalgoat.com.br/scripts/product-funnel.js"></script>
+          </div>
+        </div>
+
+        <div class="urgency">👇 Si vous quittez cette page maintenant... cette opportunité pourrait disparaître.</div>
+        <div class="last-chance">🔥 C’est votre dernière chance d’en profiter. Cette offre ne s’affiche qu’une seule fois.</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
