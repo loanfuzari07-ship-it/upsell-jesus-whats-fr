@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Merci pour votre don ! - Temple Divin</title>
+<title>Merci pour votre achat ! - Temple Divin</title>
 
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Cormorant+Garamond:wght@600;700;800&family=Lora:wght@400;500;600;700&display=swap');
@@ -172,6 +172,35 @@
     color: var(--gold);
   }
 
+  .material-btn {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    margin: 0 0 24px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #e9bf62, #c89126);
+    border: 1px solid #a56e10;
+    box-shadow: 0 10px 22px rgba(125, 78, 8, .22);
+    color: #17202a;
+    font-family: Arial, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform .15s ease;
+  }
+
+  .material-btn:active {
+    transform: scale(.98);
+  }
+
   .divider {
     position: relative;
     z-index: 3;
@@ -235,9 +264,9 @@
       </svg>
     </div>
 
-    <div class="badge">Don confirmé</div>
+    <div class="badge">Achat confirmé</div>
 
-    <h1>Merci pour votre don&nbsp;!</h1>
+    <h1>Merci pour votre achat&nbsp;!</h1>
     <p class="subtitle">Votre paiement a été effectué avec succès.</p>
 
     <div class="info-box">
@@ -245,11 +274,13 @@
       <p><strong>Important&nbsp;:</strong> n’oubliez pas de vérifier également votre dossier <strong>spam / courrier indésirable</strong>.</p>
     </div>
 
+    <a class="material-btn" href="https://drive.google.com/file/d/1XQN-GMojQ72-FCjdC4KZ6YvGvWCRS89a/view?usp=drive_link">Touchez ici pour accéder à votre contenu</a>
+
     <div class="divider"></div>
 
     <p class="support-label">Vous n’avez pas reçu l’e-mail ou vous avez des difficultés à accéder à votre contenu&nbsp;?</p>
 
-    <a class="support-btn" href="mailto:lanovdigital@gmail.com?subject=Aide%20concernant%20mon%20don&body=Bonjour%2C%20j%E2%80%99ai%20besoin%20d%E2%80%99aide%20pour%20acc%C3%A9der%20%C3%A0%20mon%20contenu.">
+    <a class="support-btn" href="mailto:lanovdigital@gmail.com?subject=Aide%20concernant%20mon%20achat&body=Bonjour%2C%20j%E2%80%99ai%20besoin%20d%E2%80%99aide%20pour%20acc%C3%A9der%20%C3%A0%20mon%20contenu.">
       ✉️ Contacter le support
     </a>
 
