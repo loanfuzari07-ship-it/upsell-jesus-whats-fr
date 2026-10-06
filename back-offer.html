@@ -308,10 +308,8 @@
         return;
       }
 
-      // Send the DISGUISED email to DigitalGoat's own checkout — that's the
-      // field that must arrive pre-filled-but-wrong, forcing the person to
-      // notice and correct it there before paying.
-      checkout.searchParams.set("email", disguiseEmail(realEmail));
+      // The email is intentionally NOT sent to DigitalGoat's checkout — the
+      // field arrives empty and the person has to type it again there.
       const keys = ["cid", "fbclid", "gclid", "src", "utm_source", "utm_medium",
         "utm_campaign", "utm_content", "utm_term", "utm_id", "sck", "xcod", "click_id", "firstName"];
       keys.forEach(function (key) {
