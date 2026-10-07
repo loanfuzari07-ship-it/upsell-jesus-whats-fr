@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Le Chemin des Miracles — Le guide complet</title>
-  <meta name="description" content="Le Chemin des Miracles : votre guide complet, des prières, un programme quotidien étape par étape et une liste de contrôle. 19 €, paiement unique et garantie satisfait ou remboursé de 60 jours.">
+  <title>Le Chemin des Miracles — Offre spéciale à 12 €</title>
+  <meta name="description" content="Le Chemin des Miracles : votre guide complet, des prières, un programme quotidien étape par étape et une liste de contrôle. 12 €, paiement unique et garantie satisfait ou remboursé de 60 jours.">
   <style>
     :root{--wine:#631e2a;--wine-deep:#35131c;--gold:#bc9147;--ink:#332a26;--muted:#746861;--ivory:#f9f5ed;--line:#e9dfce}
     *{box-sizing:border-box}
@@ -83,6 +83,11 @@
       .amount{font-size:74px}
     }
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+    .price{align-items:center;gap:19px}
+    .old-price{font:normal 31px/1 Georgia,'Times New Roman',serif;color:#d7b5b5;text-decoration-thickness:2px}
+    .offer-label{font-size:12px;letter-spacing:.7px}
+    .saving{margin:14px 0 9px;font-size:15px;color:#f4e7d4}
+    @media(max-width:540px){.old-price{font-size:28px}.saving{font-size:14px}.offer-label{font-size:11px}}
   </style>
 </head>
 <body>
@@ -105,19 +110,15 @@
     </defs>
   </svg>
 
-  <header class="status">
-    <strong>VOTRE DON EST EN COURS DE TRAITEMENT</strong>
-    <p>Ne quittez pas encore cette page. Nous avons un message pour vous.</p>
-  </header>
 
   <main>
     <article class="card" aria-labelledby="offer-title">
       <div class="hero">
         <div>
           <div class="brand"><svg aria-hidden="true" viewBox="0 0 100 100"><use href="#compass"/></svg> Le Chemin des Miracles</div>
-          <p class="first-step">Vous avez fait le premier pas vers votre miracle.</p>
-          <h1 id="offer-title">Maintenant, ne laissez pas la peur vous faire trébucher et vous en priver.</h1>
-          <p class="intro"><strong>Le Chemin des Miracles</strong> vous propose un programme étape par étape pour éviter les erreurs dans votre cheminement de foi.</p>
+          <p class="first-step">Une offre spéciale, rien que pour vous.</p>
+          <h1 id="offer-title">Le même Chemin des Miracles.<br>À seulement 12 € maintenant.</h1>
+          <p class="intro">Profitez de l’ensemble du programme <strong>Le Chemin des Miracles</strong> à un prix spécial, avec un programme étape par étape pour éviter les erreurs dans votre cheminement de foi.</p>
         </div>
         <div class="book-scene" role="img" aria-label="Couverture du guide Le Chemin des Miracles, dans les tons bordeaux et or">
           <div class="book">
@@ -154,8 +155,9 @@
         </section>
 
         <section class="offer" aria-label="Prix et garantie">
-          <p class="offer-label">Pour seulement</p>
-          <div class="price" aria-label="19 euros"><span class="amount">19 €</span></div>
+          <p class="offer-label">Une remise exclusive — uniquement sur cette page</p>
+          <div class="price" aria-label="Prix initial : 19 euros. Maintenant : 12 euros."><s class="old-price">19 €</s><span class="amount">12 €</span></div>
+          <p class="saving"><strong>Économisez 7 €.</strong> Recevez l’ensemble du programme.</p>
           <p class="payment">Paiement unique</p>
           <div class="offer-divider" aria-hidden="true"></div>
           <p class="guarantee"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#shield"/></svg>Garantie satisfait ou remboursé de 60 jours</p>
