@@ -3,79 +3,230 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Accès à vie — Offre de Miracles</title>
-  <meta name="description" content="Conservez un accès à vie à l’application Offre de Miracles, au Temple Divin de Prière et au contenu inclus dans votre achat pour 15 €, en paiement unique.">
+  <title>365 affirmations de foi du roi Salomon — 15 €</title>
+  <meta name="description" content="365 affirmations de foi du roi Salomon. Une pour chaque jour de l’année, une prière et une routine de moins de 5 minutes. 15 €, paiement unique, garantie de remboursement de 60 jours.">
   <style>
+    :root{--wine:#631e2a;--wine-deep:#35131c;--gold:#bc9147;--ink:#332a26;--muted:#746861;--ivory:#f9f5ed;--line:#e9dfce}
     *{box-sizing:border-box}
-    body{margin:0;background:#fff;color:#222;font-family:Arial,Helvetica,sans-serif;font-size:19px;line-height:1.55}
-    header{background:#a32222;color:#fff;text-align:center;padding:14px 20px}
-    header strong{display:block;color:#ffeb3b;font-size:17px;line-height:1.35}
-    header p{max-width:700px;margin:6px auto 0;font-size:13px;line-height:1.45}
-    main{max-width:680px;margin:auto;padding:25px 22px 30px;text-align:center}
-    p{margin:0 0 20px}
-    .label{color:#a32222;font-size:14px;font-weight:700;letter-spacing:2px;margin-bottom:10px}
-    h1{font-size:clamp(25px,4.5vw,32px);line-height:1.25;margin:0 0 18px;color:#a32222}
-    .mockup{display:block;width:432px;max-width:80%;height:auto;aspect-ratio:9 / 16;object-fit:contain;margin:20px auto;background:transparent;border:0;border-radius:0;box-shadow:none;padding:0}
-    .lifetime-seal{display:block;width:240px;max-width:100%;height:auto;aspect-ratio:1 / 1;margin:20px auto}
-    .gifts{list-style:none;padding:0;margin:0 0 21px;font-size:20px;font-weight:bold;line-height:1.55}
-    .gifts li{margin:0 0 12px}
-    .gifts li::before{content:'✓';color:#287b3c;margin-right:9px}
-    .offer{margin:23px 0 20px}
-    .only{margin:0;font-size:18px}
-    .price{font-size:58px;line-height:1.15;font-weight:800;margin:5px 0;color:#222}
-    .payment{font-size:16px;margin:5px 0 19px}
-    .funnel{width:100%;max-width:400px;margin:0 auto}
-    .funnel iframe{display:block;border:0;width:100%}
-    @media(max-width:480px){body{font-size:18px}header{padding:12px 14px}header strong{font-size:14px}header p{font-size:12px}main{padding-inline:19px}.gifts{font-size:18px}.price{font-size:53px}}
-    .security{margin:14px 0 0;color:#555;font-size:14px;line-height:1.6;text-align:center}
-    .security strong{display:block;color:#333}
+    body{margin:0;background:radial-gradient(ellipse at 10% 30%,#eee2cd80,transparent 45%),radial-gradient(ellipse at 92% 85%,#ecdac370,transparent 40%),#f7f3ec;color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;font-size:17px;line-height:1.6}
+    .status{background:#b91c1c;color:#fff;padding:16px 20px;text-align:center;border-bottom:2px solid #d5b06a}
+    .status strong{display:block;font-size:14px;letter-spacing:1.5px;line-height:1.4;color:#ffe2a1}
+    .status p{margin:5px 0 0;font-size:13px;color:#f1dfe1;line-height:1.5}
+    .status p{font-weight:700;color:#fff;font-size:14px;margin-top:9px}
+    .status .down-arrow{display:block;width:24px;height:24px;margin:8px auto 0;color:#ffe2a1}
+    .book-number{font:normal 54px/1 Georgia,'Times New Roman',serif;margin:9px 0 13px;color:#ffe2a1}
+    .step-number{font:normal 23px/1 Georgia,'Times New Roman',serif}
+    .cta-preview{display:block;width:100%;padding:19px 18px;border:1px solid #137432;border-radius:10px;background:linear-gradient(#21ae4c,#168b3a);box-shadow:0 5px 14px #168b3a22;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-weight:700;line-height:1.45;text-align:center;opacity:1;-webkit-text-fill-color:#fff}
+    main{width:calc(100% - 40px);max-width:960px;margin:32px auto 44px}
+    .card{border:1px solid #e6d8c3;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 22px 70px #4c291414}
+    .hero{display:grid;grid-template-columns:minmax(0,1fr) 225px;gap:42px;padding:44px 46px 39px;background:radial-gradient(circle at 93% 20%,#efe0c955,transparent 50%),linear-gradient(150deg,#fffdfa,#fff)}
+    .brand{display:flex;align-items:center;gap:9px;font-size:11px;font-weight:800;letter-spacing:2.8px;text-transform:uppercase;color:#98723b;margin:0 0 21px}
+    .brand svg{width:20px;height:20px;flex:none}
+    .first-step{margin:0 0 11px;font-size:17px;color:#766254;font-weight:600;line-height:1.5}
+    h1{font-family:Georgia,'Times New Roman',serif;font-size:38px;font-weight:500;letter-spacing:-.7px;line-height:1.15;color:var(--wine);margin:0 0 22px}
+    .intro{margin:0;font-size:17px;line-height:1.65;max-width:540px}
+    .intro strong{color:var(--wine)}
+    .book-scene{align-self:center;display:flex;align-items:center;justify-content:center;padding:12px 0 16px;position:relative}
+    .book-scene:after{content:"";position:absolute;bottom:0;width:180px;height:14px;filter:blur(8px);background:#482a2530;border-radius:50%}
+    .book{position:relative;width:202px;min-height:274px;background:linear-gradient(115deg,#421723,#6a2231 70%,#4f1a28);border-radius:3px 8px 8px 3px;box-shadow:9px 11px 25px #4414232b,inset 7px 0 6px #22091066;transform:rotate(-5deg);padding:21px 17px 21px 24px;color:#f8e5b9;text-align:center;border:1px solid #8d524c}
+    .book:before{content:"";position:absolute;inset:10px 10px 10px 16px;border:1px solid #b8945366;border-radius:1px;pointer-events:none}
+    .book:after{content:"";position:absolute;right:-7px;top:4px;bottom:4px;width:6px;background:repeating-linear-gradient(0deg,#f5eddd 0,#f5eddd 2px,#dfd0b8 2px,#dfd0b8 3px);border-radius:0 4px 4px 0;z-index:-1}
+    .book-category{font-size:8px;letter-spacing:1.8px;font-weight:700;margin:3px 0 13px;text-transform:uppercase;color:#dcc39b}
+    .book .compass{width:78px;height:78px;display:block;margin:0 auto 14px;color:#d6b071}
+    .book-title{font:normal 22px/1.1 Georgia,'Times New Roman',serif;letter-spacing:.6px;margin:0 0 17px}
+    .book-line{width:35px;height:1px;background:#d6b07180;margin:0 auto 13px}
+    .book-bottom{font-size:8px;letter-spacing:1.1px;line-height:1.8;text-transform:uppercase;color:#e6cda4}
+    .content{padding:0 42px 35px}
+    .receive-title{display:flex;align-items:center;gap:14px;margin:0 0 19px;color:var(--wine);font:normal 27px/1.3 Georgia,'Times New Roman',serif}
+    .receive-title:after{content:"";height:1px;background:var(--line);flex:1}
+    .deliverables{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:14px}
+    .deliverables li{display:flex;align-items:flex-start;gap:14px;border:1px solid var(--line);padding:22px 18px;border-radius:15px;background:linear-gradient(145deg,#fffdf9,#fbf8f2)}
+    .icon{display:grid;place-items:center;width:44px;height:44px;flex:0 0 44px;background:#f4ead9;color:#9a7238;border:1px solid #e8d5b3;border-radius:12px}
+    .icon svg{width:24px;height:24px}
+    .gift-title{margin:0 0 6px;font-size:16px;line-height:1.35;color:#58242b}
+    .gift-copy{margin:0;font-size:14px;line-height:1.6;color:var(--muted)}
+    .routine-copy{margin:0;font-size:17px;line-height:1.7}
+    .routine-copy strong{color:var(--wine)}
+    .daily-example{margin:25px 0 0;padding:23px;border:1px solid #e8d5b3;border-left:4px solid var(--gold);border-radius:12px;background:#fbf8f2}
+    .daily-example h2{margin:0 0 13px;font:normal 25px/1.3 Georgia,'Times New Roman',serif;color:var(--wine)}
+    .daily-example p{margin:0 0 17px;font-size:16px;line-height:1.65}
+    .daily-example p:last-child{margin-bottom:0}
+    .daily-example strong{color:var(--wine)}
+    .bridge{margin:24px 0 0;font-size:17px;line-height:1.65;text-align:center}
+    .bridge strong{color:var(--wine)}
+    .offer{position:relative;margin:27px 0 0;padding:27px 25px 25px;border-radius:17px;text-align:center;color:#fff;background:radial-gradient(ellipse at 50% 0,#97465455,transparent 75%),linear-gradient(130deg,#38131e,#682331)}
+    .offer:before{content:"";position:absolute;inset:8px;border:1px solid #d6b07133;border-radius:11px;pointer-events:none}
+    .offer-label{margin:0 0 10px;color:#e3c790;font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase}
+    .offer-copy{position:relative;max-width:620px;margin:0 auto 16px;color:#fff5df;font-size:18px;line-height:1.5}
+    .price{display:flex;align-items:flex-start;justify-content:center;gap:4px;color:#fff5df;margin:0 0 9px;line-height:1}
+    .amount{font-family:Georgia,'Times New Roman',serif;font-size:78px;letter-spacing:-3px;line-height:.95}
+    .payment{margin:0;color:#efdae0;font-size:14px}
+    .offer-divider{width:55px;height:1px;background:#d5b17455;margin:17px auto}
+    .guarantee{display:flex;align-items:center;justify-content:center;gap:8px;margin:0;color:#e9d19f;font-size:14px;font-weight:700}
+    .guarantee svg{height:20px;width:20px}
+    .checkout-area{width:100%;max-width:400px;margin:22px auto 0}
+    .checkout-area:empty{display:none}
+    .checkout-area iframe{display:block;width:100%;border:0}
+    .checkout-trust{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;margin:12px auto 0;max-width:540px;color:#655c53;font-size:12px;line-height:1.5;text-align:center}
+    .checkout-trust span{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+    .checkout-trust svg{width:16px;height:16px;flex:none;color:#6a754b}
+    .end-mark{display:flex;gap:12px;align-items:center;justify-content:center;margin:22px auto 0;width:100px;color:#a98445;font-size:15px}
+    .end-mark:before,.end-mark:after{content:"";height:1px;background:#dcccaf;flex:1}
+    @media(max-width:720px){
+      main{width:calc(100% - 24px);margin:20px auto 30px}
+      .hero{padding:30px 25px 28px;gap:25px;grid-template-columns:minmax(0,1fr) 180px}
+      h1{font-size:30px}.first-step{font-size:15px}.intro{font-size:16px}
+      .book{width:160px;min-height:232px;padding:18px 12px 18px 18px}
+      .book .compass{width:62px;height:62px}
+      .book-title{font-size:20px}
+      .content{padding:0 25px 27px}
+      .deliverables li{gap:11px;padding:18px 15px}
+    }
+    @media(max-width:540px){
+      .status{padding:14px 15px}.status strong{font-size:12px;letter-spacing:.8px}.status p{font-size:12px}
+      .card{border-radius:18px}
+      .hero{grid-template-columns:1fr;gap:20px;padding:29px 23px 25px;text-align:center}
+      .brand{justify-content:center;margin-bottom:18px;font-size:10px}
+      .first-step{font-size:16px}
+      h1{font-size:32px;line-height:1.18}
+      .intro{font-size:16px;line-height:1.65}
+      .book-scene{padding-top:3px}
+      .book{width:165px;min-height:232px;transform:rotate(-4deg)}
+      .content{padding:0 20px 24px}
+      .receive-title{font-size:25px;margin-bottom:17px}
+      .deliverables{grid-template-columns:1fr;gap:12px}
+      .deliverables li{padding:18px 16px}
+      .gift-title{font-size:16px}.gift-copy{font-size:14px}
+      .offer{margin-top:23px;padding:25px 19px}
+      .amount{font-size:74px}
+    }
+    .solomon-mockup{align-self:center;width:100%;max-width:285px;margin:0 auto}
+    .solomon-mockup>svg{display:block;width:100%;height:auto;overflow:visible}
+    @media(max-width:540px){.solomon-mockup{max-width:270px;margin:-4px auto 0}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
   </style>
 </head>
 <body>
-  <header id="status-header">
-    <strong>DERNIÈRE ÉTAPE, NOUS FINALISONS VOTRE DON…</strong>
-    <p>AVANT DE CONTINUER, GARDEZ VOS PRIÈRES AVEC VOUS POUR TOUTE LA VIE</p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+    <defs>
+      <symbol id="compass" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width=".8"/>
+        <circle cx="50" cy="50" r="34" fill="none" stroke="currentColor" stroke-width=".6" opacity=".5"/>
+        <path d="M50 10 57 43 90 50 57 57 50 90 43 57 10 50 43 43Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <path d="m50 24 6 26-6 26-6-26Z" fill="currentColor" opacity=".9"/>
+        <path d="m24 50 26-6 26 6-26 6Z" fill="currentColor" opacity=".45"/>
+        <circle cx="50" cy="50" r="4" fill="currentColor"/>
+        <path d="M50 4v4M50 92v4M4 50h4M92 50h4" stroke="currentColor" stroke-width="1"/>
+      </symbol>
+      <symbol id="guide" viewBox="0 0 24 24"><path d="M12 5.5C9 3.5 5 3.5 3 4.5v15c3-1 6-1 9 1 3-2 6-2 9-1v-15c-2-1-6-1-9 1ZM12 5.5v15M6 8h3M6 11h3M15 8h3M15 11h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="prayer" viewBox="0 0 24 24"><path d="M12 20C8 17 3 13 3 8.5A4.5 4.5 0 0 1 12 8a4.5 4.5 0 0 1 9 .5C21 13 16 17 12 20ZM12 9v7M9 12h6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="path" viewBox="0 0 24 24"><path d="M5 19h6a4 4 0 0 0 0-8H9a4 4 0 0 1 0-8h8M14 1l3 2-3 3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="5" cy="19" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+      <symbol id="checklist" viewBox="0 0 24 24"><path d="M9 4H5v17h14V4h-4M9 3h6v4H9ZM8 12l1.5 1.5L12 11M14 12h2M8 17l1.5 1.5L12 16M14 17h2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6ZM8 12l3 3 5-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+      <symbol id="crown" viewBox="0 0 24 24"><path d="m3 7 4 4 5-7 5 7 4-4-2 11H5ZM5 21h14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="arrow-down" viewBox="0 0 24 24"><path d="M12 3v17m-7-7 7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="status">
+    <strong>DERNIÈRE ÉTAPE ! VOTRE DON EST EN COURS DE FINALISATION ET VOTRE ACCÈS AU TEMPLE DIVIN SERA DÉBLOQUÉ…</strong>
+    <p>PENDANT QUE NOUS FINALISONS, DÉCOUVREZ CECI</p>
+    <svg class="down-arrow" aria-hidden="true" viewBox="0 0 24 24"><use href="#arrow-down"/></svg>
   </header>
+
   <main>
-    <p class="label">ACCÈS À VIE</p>
-    <h1>Conservez votre Offre de Miracles pour toute la vie !</h1>
-    <p>Votre cheminement de foi et votre quête de miracles se poursuivent au-delà d’aujourd’hui. Dans les moments de gratitude, d’incertitude ou de besoin, vous pouvez souhaiter retrouver les prières et les conseils que vous avez reçus.</p>
-
-    <img class="mockup" src="images/acesso.webp" width="1080" height="1920" alt="Accès à vie à l’Offre de Miracles">
-
-    <p>Avec l’<strong>Accès à vie</strong>, vous pourrez accéder pour toujours à l’application <strong>Offre de Miracles, avec le Temple Divin de Prière, ainsi qu’au contenu consacré aux miracles inclus dans votre achat</strong>, sans date d’expiration. Vous y retrouverez également, chaque jour, la parole du jour, la prière du jour et la bénédiction du jour.</p>
-    <svg class="lifetime-seal" viewBox="0 0 500 500" role="img" aria-label="Sceau d’accès à vie" xmlns="http://www.w3.org/2000/svg">
-      <defs><linearGradient id="lifetime-bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#682331"/><stop offset="1" stop-color="#35131c"/></linearGradient></defs>
-      <circle cx="250" cy="250" r="220" fill="url(#lifetime-bg)"/>
-      <circle cx="250" cy="250" r="202" fill="none" stroke="#d6b071" stroke-width="2"/>
-      <circle cx="250" cy="250" r="191" fill="none" stroke="#d6b071" stroke-opacity=".35"/>
-      <path d="M250 205C214 145 132 139 132 205S215 270 250 205C285 140 368 139 368 205S286 265 250 205Z" fill="none" stroke="#e3c790" stroke-width="12" stroke-linecap="round"/>
-      <path d="M200 289h100" stroke="#d6b071" stroke-width="2"/>
-      <text x="250" y="337" text-anchor="middle" fill="#fff5df" font-family="Georgia,serif" font-size="36">ACCÈS</text>
-      <text x="250" y="381" text-anchor="middle" fill="#fff5df" font-family="Georgia,serif" font-size="36">À VIE</text>
-    </svg>
-    <ul class="gifts">
-      <li>Accès à vie à l’application Offre de Miracles, avec le Temple Divin de Prière.</li>
-      <li>Vos prières et vos invocations restent toujours à portée de main.</li>
-      <li>Un paiement unique pour cette mise à niveau. Aucun frais récurrent.</li>
-    </ul>
-    <p>Choisissez cette mise à niveau en paiement unique et retrouvez votre contenu de prière chaque fois que vous en avez besoin, à votre rythme.</p>
-    <div class="offer">
-      <p class="only">Obtenez votre accès à vie pour seulement :</p>
-      <div class="price">15 €</div>
-      <p class="payment">Paiement unique</p>
-      <div class="funnel">
-        <iframe
-          id="product-funnel-cmuywdjao0ngy01psurp10fi7"
-          src="https://pay.digitalgoat.com.br/ext/funnel/cmuywdjao0ngy01psurp10fi7"
-          width="100%" height="100%"
-          frameborder="0" allowtransparency="true"
-          title="Paiement sécurisé de l’offre">
-        </iframe>
-      <p class="security"><strong><span aria-hidden="true">🔒</span> Achat sécurisé</strong><span><span aria-hidden="true" style="color:#238245;font-weight:700;font-size:18px">✓</span> Garantie de remboursement de 60 jours</span></p>
+    <article class="card" aria-labelledby="offer-title">
+      <div class="hero">
+        <div>
+          <div class="brand"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#crown"/></svg> La sagesse du roi Salomon</div>
+          <h1 id="offer-title">365 affirmations de foi du roi Salomon</h1>
+          <p class="first-step">Une pour chaque jour de l’année.</p>
+          <p class="intro"><strong>Les mêmes paroles qui ont fait du roi Salomon l’homme le plus sage et le plus prospère de son époque.</strong></p>
+        </div>
+        <div class="solomon-mockup" role="img" aria-label="Livre des 365 affirmations de foi du roi Salomon : couverture bleu nuit et or, couronne dorée et calendrier de foi">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="solomon-cover" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#213c58"/><stop offset=".45" stop-color="#11283f"/><stop offset="1" stop-color="#061525"/></linearGradient>
+              <linearGradient id="solomon-gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0bf"/><stop offset=".3" stop-color="#e7c575"/><stop offset=".55" stop-color="#a57832"/><stop offset=".75" stop-color="#f6d99a"/><stop offset="1" stop-color="#b78b46"/></linearGradient>
+              <linearGradient id="solomon-pages" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#ba9760"/><stop offset=".2" stop-color="#f9edcf"/><stop offset=".8" stop-color="#e6d4af"/><stop offset="1" stop-color="#ae8a51"/></linearGradient>
+              <radialGradient id="solomon-halo"><stop stop-color="#ead7af" stop-opacity=".6"/><stop offset="1" stop-color="#ead7af" stop-opacity="0"/></radialGradient>
+              <pattern id="solomon-grain" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M0 2h1M4 6h1" stroke="#fff" stroke-opacity=".07" stroke-width=".6"/></pattern>
+              <filter id="solomon-shadow" x="-40%" y="-30%" width="190%" height="190%"><feDropShadow dx="9" dy="14" stdDeviation="11" flood-color="#0d1a2a" flood-opacity=".25"/></filter>
+              <filter id="solomon-calendar-shadow" x="-50%" y="-50%" width="200%" height="210%"><feDropShadow dx="3" dy="7" stdDeviation="6" flood-color="#15263a" flood-opacity=".2"/></filter>
+            </defs>
+            <ellipse cx="165" cy="195" rx="155" ry="175" fill="url(#solomon-halo)"/>
+            <circle cx="163" cy="186" r="121" fill="none" stroke="#d1b67c" stroke-width=".8" opacity=".3"/>
+            <ellipse cx="163" cy="381" rx="122" ry="12" fill="#1c2b3d" opacity=".07"/>
+            <g transform="rotate(-7 155 205)" filter="url(#solomon-shadow)">
+              <path d="M48 45h204v310H48Z" fill="#091b2e"/>
+              <path d="M239 49h14v301h-14Z" fill="url(#solomon-pages)"/>
+              <path d="M244 58v285m3-285v285m3-285v285" stroke="#aa8a58" stroke-opacity=".45" stroke-width=".8"/>
+              <rect x="37" y="39" width="205" height="315" rx="5" fill="url(#solomon-cover)" stroke="#2b4051"/>
+              <rect x="37" y="39" width="205" height="315" rx="5" fill="url(#solomon-grain)"/>
+              <path d="M48 41v311" stroke="#071222" stroke-width="9" opacity=".35"/>
+              <path d="M52 42v309" stroke="#7590a4" stroke-width=".7" opacity=".4"/>
+              <rect x="60" y="55" width="168" height="284" rx="2" fill="none" stroke="url(#solomon-gold)" stroke-width="1.2"/>
+              <rect x="65" y="60" width="158" height="274" rx="1" fill="none" stroke="#d8b870" stroke-opacity=".35" stroke-width=".5"/>
+              <path d="M60 73V55h18m132 0h18v18M60 321v18h18m132 0h18v-18" fill="none" stroke="#edcd86" stroke-width="2"/>
+              <text x="144" y="81" fill="#d9bf82" font-family="Arial,Helvetica,sans-serif" font-size="8" letter-spacing="2" text-anchor="middle">LE ROI SALOMON</text>
+              <circle cx="144" cy="122" r="28" fill="none" stroke="#c6a061" stroke-width=".6" opacity=".7"/>
+              <path d="m118 113 12 10 14-24 14 24 12-10-5 27h-42Z" fill="url(#solomon-gold)" stroke="#f1d393" stroke-width=".6"/>
+              <path d="M125 143h38" stroke="url(#solomon-gold)" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="118" cy="112" r="2.3" fill="#f5d793"/><circle cx="144" cy="98" r="2.8" fill="#f5d793"/><circle cx="170" cy="112" r="2.3" fill="#f5d793"/>
+              <path d="m144 121 3 5-3 5-3-5Z" fill="#102840"/>
+              <text x="144" y="215" fill="url(#solomon-gold)" font-family="Georgia,Times New Roman,serif" font-size="69" text-anchor="middle" letter-spacing="-2">365</text>
+              <text x="144" y="244" fill="#f8e9c4" font-family="Georgia,Times New Roman,serif" font-size="17" text-anchor="middle" letter-spacing="1">AFFIRMATIONS</text>
+              <text x="144" y="267" fill="#f8e9c4" font-family="Georgia,Times New Roman,serif" font-size="19" text-anchor="middle" letter-spacing="3">DE FOI</text>
+              <path d="M100 283h32m24 0h32m-44-4 4 4-4 4-4-4Z" fill="none" stroke="#c3a466" stroke-width=".8"/>
+              <text x="144" y="306" fill="#d8bd86" font-family="Arial,Helvetica,sans-serif" font-size="8" text-anchor="middle" letter-spacing="1">UNE POUR CHAQUE JOUR</text>
+              <text x="144" y="319" fill="#d8bd86" font-family="Arial,Helvetica,sans-serif" font-size="8" text-anchor="middle" letter-spacing="1">DE L’ANNÉE</text>
+            </g>
+            <g transform="rotate(8 246 327)" filter="url(#solomon-calendar-shadow)">
+              <path d="M189 275h110v120H189Z" fill="#c2ab7b"/>
+              <rect x="187" y="269" width="110" height="121" rx="7" fill="#fffaf0" stroke="#dcc79d"/>
+              <path d="M194 269h96a7 7 0 0 1 7 7v23H187v-23a7 7 0 0 1 7-7Z" fill="url(#solomon-gold)"/>
+              <path d="M211 262v16m61-16v16" stroke="#15304a" stroke-width="4" stroke-linecap="round"/>
+              <text x="242" y="289" fill="#233a4e" font-family="Arial,Helvetica,sans-serif" font-size="8" font-weight="700" letter-spacing="1.2" text-anchor="middle">CHAQUE MATIN</text>
+              <text x="242" y="345" fill="#15304a" font-family="Georgia,Times New Roman,serif" font-size="42" text-anchor="middle">365</text>
+              <text x="242" y="366" fill="#8a6a38" font-family="Arial,Helvetica,sans-serif" font-size="9" letter-spacing="2" text-anchor="middle">JOURS DE FOI</text>
+              <path d="M224 377h36" stroke="#d8c298" stroke-width="1"/>
+            </g>
+          </svg>
+        </div>
       </div>
-    </div>
+
+      <div class="content">
+        <section aria-labelledby="receive-title">
+          <h2 class="receive-title" id="receive-title">C’est simple :</h2>
+          <p class="routine-copy">Vous ouvrez l’affirmation du jour à votre réveil, vous récitez la prière qui l’accompagne, vous utilisez l’affirmation, et c’est tout. Répétez cela chaque jour de l’année. Cela ne prend même pas 5 minutes, <strong>mais je vous garantis que vous vivrez une nouvelle réalité dès le premier jour.</strong></p>
+        </section>
+
+        <section class="offer" aria-label="Prix et garantie">
+          <p class="offer-copy">Vous pouvez ajouter les <strong>365 affirmations de foi du roi Salomon</strong> à votre <strong>Offre de Miracles</strong> pour seulement :</p>
+          <div class="price" aria-label="15 euros"><span class="amount">15 €</span></div>
+          <p class="payment">Paiement unique</p>
+          <div class="offer-divider" aria-hidden="true"></div>
+          <p class="guarantee"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#shield"/></svg>Garantie satisfait ou remboursé de 60 jours</p>
+        </section>
+
+        <div class="checkout-area" id="checkout">
+          <iframe
+            id="product-funnel-cmuerlqe402ac01ohhs4gsbqb"
+            src="https://pay.digitalgoat.com.br/ext/funnel/cmuerlqe402ac01ohhs4gsbqb"
+            width="100%" height="100%"
+            frameborder="0" allowtransparency="true">
+          </iframe>
+        </div>
+        <div class="checkout-trust">
+          <span><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#lock"/></svg>Achat sécurisé</span>
+        </div>
+        <div class="end-mark" aria-hidden="true">✦</div>
+      </div>
+    </article>
   </main>
-  <script src="https://app.digitalgoat.com.br/scripts/product-funnel.js"></script>
+
+<script src="https://app.digitalgoat.com.br/scripts/product-funnel.js"></script>
 </body>
 </html>
