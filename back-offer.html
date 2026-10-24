@@ -54,21 +54,28 @@
     .verse cite{display:block;margin-top:6px;font-style:normal;font-weight:700;font-size:12.5px;color:#65676b}
 
     .offers{padding:8px 14px 8px}
-    .offer-heading{margin:18px 0 24px;text-align:center;font-size:16px;font-weight:400;line-height:1.4}
-    .offer-heading strong{display:block;font-size:18px;margin-bottom:4px}
+    .step-header{display:flex;align-items:center;gap:12px;margin:18px 0 10px 0;padding:12px 14px;background:#f7f8fa;border:1px solid #dddfe2;border-radius:10px}
+    .step-number{background:linear-gradient(135deg,#d4a017,#f4c534);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;flex-shrink:0;box-shadow:0 2px 6px rgba(212,160,23,.35)}
+    .step-info{flex:1;min-width:0}
+    .step-label{font-size:11px;font-weight:700;letter-spacing:1.3px;color:#d4a017;text-transform:uppercase;margin-bottom:2px}
+    .step-title{font-size:15px;font-weight:700;color:#050505;line-height:1.35}
 
+    .email-box{background:#f7f8fa;border:1px solid #dddfe2;border-radius:10px;padding:14px;margin:0 0 8px;transition:box-shadow .2s,border-color .2s}
+    .email-box input{width:100%;padding:12px 14px;border:1px solid #ccd0d5;border-radius:8px;font-size:15px;outline:none;font-family:inherit}
+    .email-box input:focus{border-color:#0866ff;box-shadow:0 0 0 2px rgba(8,102,255,.2)}
+    .email-box.shake{animation:shake .45s ease;border-color:#f02849;box-shadow:0 0 0 3px rgba(240,40,73,.25)}
+    @keyframes shake{0%,100%{transform:translateX(0)}15%,45%,75%{transform:translateX(-7px)}30%,60%,90%{transform:translateX(7px)}}
 
     .offer{display:block;text-decoration:none;color:inherit;background:#fff;border:2px solid #f7b928;border-radius:12px;padding:18px 16px;margin-bottom:10px;cursor:pointer;
       background:linear-gradient(135deg,#fffef8 0%,#fff9e6 100%);box-shadow:0 0 0 1px #f7b928,0 4px 12px rgba(247,185,40,.25);position:relative;transition:transform .12s}
     .offer:active{transform:scale(.985)}
     .offer-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#f7b928;color:#000;font-size:11px;font-weight:800;padding:3px 12px;border-radius:20px;white-space:nowrap}
-    .offer-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .offer-row{display:flex;align-items:center;justify-content:space-between}
     .offer-left{display:flex;flex-direction:column;gap:2px}
     .offer-label{font-size:12px;font-weight:600;color:#8a6a00;letter-spacing:.3px}
     .offer-was{font-size:13px;color:#8a8d91;text-decoration:line-through;margin-bottom:2px;letter-spacing:.5px}
     .offer-price{font-size:32px;font-weight:800;color:#b07800;line-height:1}
-    .offer-cta{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;white-space:nowrap;min-height:44px;padding:9px 14px;border-radius:8px;background:#f7b928;color:#171300;font-size:13px;font-weight:800;line-height:1;box-shadow:0 2px 5px rgba(176,120,0,.18);transition:background .15s,box-shadow .15s}
-    .offer:hover .offer-cta,.offer:focus-visible .offer-cta{background:#e6ac22;box-shadow:0 3px 7px rgba(176,120,0,.24)}
+    .offer-cta{font-size:15px;font-weight:800;color:#b07800}
     .offer-sub{font-size:12.5px;color:#65676b;margin-top:8px;line-height:1.4}
 
     .offers-foot{text-align:center;font-size:12px;color:#65676b;margin:10px 0 4px}
@@ -126,16 +133,34 @@
 
       <section class="offers" id="offersSection">
 
-        <h2 class="offer-heading"><strong>💛 Semez votre graine</strong>Faites votre Offre de Miracles !</h2>
+        <div class="step-header">
+          <div class="step-number">1</div>
+          <div class="step-info">
+            <div class="step-label">Étape 1</div>
+            <div class="step-title">📧 Saisissez votre adresse e-mail pour recevoir les détails de votre don et vos bonus</div>
+          </div>
+        </div>
+        <div class="email-box" id="emailBox">
+          <input type="email" id="leadEmail" placeholder="vous@exemple.fr" autocomplete="email" inputmode="email" aria-label="Votre adresse e-mail" aria-describedby="emailError" required>
+          <p id="emailError" class="field-message" role="alert" hidden></p>
+        </div>
 
-        <a class="offer" data-offer data-price="15" href="https://pay.digitalgoat.com.br/checkout/cmva2gi3z09fq01op1tecbc25?offer=9EO0UR5" id="donationOffer" aria-describedby="checkoutMessage">
+        <div class="step-header">
+          <div class="step-number">2</div>
+          <div class="step-info">
+            <div class="step-label">Étape 2</div>
+            <div class="step-title">💛 Semez votre graine</div>
+          </div>
+        </div>
+
+        <a class="offer" data-offer data-price="10" href="https://pay.digitalgoat.com.br/checkout/cmuei75kc00yl01n1xxx51as4?offer=TM7YDV8" id="donationOffer" aria-describedby="checkoutMessage">
           <span class="offer-badge">⭐ SECONDE CHANCE</span>
           <div class="offer-row">
             <div class="offer-left">
               <div class="offer-label">FAIRE UNE OFFRANDE</div>
               
-              <div class="offer-was">25 € · 50 € · 70 € · 100 €</div>
-              <div class="offer-price">15 €</div>
+              <div class="offer-was">20 €   35 €   50 €</div>
+              <div class="offer-price">10 €</div>
             </div>
             <div class="offer-cta">JE SÈME →</div>
           </div>
@@ -202,8 +227,31 @@
   </main>
 
   <script>
-  // Paiement DigitalGoat pour l’offre à 15 euros.
-  const DIGITALGOAT_CHECKOUT_URL = "https://pay.digitalgoat.com.br/checkout/cmva2gi3z09fq01op1tecbc25?offer=9EO0UR5";
+  // Paiement DigitalGoat pour l’offre à 10 euros.
+  const DIGITALGOAT_CHECKOUT_URL = "https://pay.digitalgoat.com.br/checkout/cmuei75kc00yl01n1xxx51as4?offer=TM7YDV8";
+
+  // ===== EMAIL DISGUISE — same rule as the main funnel's checkout step =====
+  // The pre-filled field must NOT show the real email as-is: one character is
+  // swapped on purpose (e.g. test@gmail.com -> taste@gmail.com) so the person
+  // has to notice and correct it before paying. This is an intentional
+  // human-verification / anti-bot measure. Do not remove.
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var DISGUISE_MAP = [[/l/,"I"],[/i/,"l"],[/a/,"e"],[/e/,"a"],[/p/,"q"],[/q/,"p"],[/b/,"p"],[/u/,"v"],[/v/,"u"],[/o/,"0"]];
+  function disguiseEmail(email) {
+    var at = email.lastIndexOf("@");
+    if (at < 2) return email;
+    var local = email.slice(0, at);
+    var domain = email.slice(at);
+    for (var i = 1; i < local.length - 1; i++) {
+      var ch = local[i];
+      for (var j = 0; j < DISGUISE_MAP.length; j++) {
+        if (DISGUISE_MAP[j][0].test(ch)) {
+          return local.slice(0, i) + DISGUISE_MAP[j][1] + local.slice(i + 1) + domain;
+        }
+      }
+    }
+    return email;
+  }
 
   (function () {
     "use strict";
@@ -214,12 +262,41 @@
         firstName + ", même une petite graine peut déplacer des montagnes.";
     }
 
+    const email = document.getElementById("leadEmail");
+    const box = document.getElementById("emailBox");
+    const error = document.getElementById("emailError");
     const message = document.getElementById("checkoutMessage");
     const offer = document.getElementById("donationOffer");
+    const emailPattern = EMAIL_RE;
+    const passedEmail = (params.get("email") || "").trim();
+    // Pre-fill with the REAL email here — this is just our own page's field.
+    // The disguise is applied later, only to the email sent on to DigitalGoat's
+    // own checkout URL, so it's THEIR checkout field that arrives wrong and
+    // forces a correction (see the click handler below).
+    if (emailPattern.test(passedEmail)) email.value = passedEmail;
+
+    email.addEventListener("input", function () {
+      error.hidden = true;
+      email.removeAttribute("aria-invalid");
+      box.classList.remove("shake");
+    });
 
     offer.addEventListener("click", function (event) {
       event.preventDefault();
       message.hidden = true;
+      const realEmail = email.value.trim();
+      email.value = realEmail;
+      if (!emailPattern.test(realEmail) || !email.checkValidity()) {
+        error.textContent = "Veuillez saisir une adresse e-mail valide.";
+        error.hidden = false;
+        email.setAttribute("aria-invalid", "true");
+        box.classList.remove("shake");
+        void box.offsetWidth;
+        box.classList.add("shake");
+        box.scrollIntoView({ behavior: "smooth", block: "center" });
+        email.focus({ preventScroll: true });
+        return;
+      }
 
       let checkout;
       try {
@@ -231,6 +308,8 @@
         return;
       }
 
+      // The email is intentionally NOT sent to DigitalGoat's checkout — the
+      // field arrives empty and the person has to type it again there.
       const keys = ["cid", "fbclid", "gclid", "src", "utm_source", "utm_medium",
         "utm_campaign", "utm_content", "utm_term", "utm_id", "sck", "xcod", "click_id", "firstName"];
       keys.forEach(function (key) {
